@@ -40,9 +40,9 @@ public class GameSession : MonoBehaviour {
 
     public void ProcessPlayerDeath() // Keep public so that other scripts/classes can trigger player death.
     {
-        if (playerLives > 1) // maybe > 0
+        if (playerLives > 0) // maybe > 0
         {
-            TakeLife();
+            TakeLife(); // TRY printing the current lives as a way to see how it decreases when you hit the water.
         } else
         {
             ResetGameSession();
