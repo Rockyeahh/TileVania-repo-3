@@ -87,18 +87,34 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //print(gameObject.transform.position);
         if (myBody.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
         {
             Die();
+            //WaitForDamage(); // Doesn't work. The Player still collides more than once.
+            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0);
+            Debug.Log(other.gameObject.name);
         }
     }
+
+    //IEnumerator WaitForDamage()
+    //{
+   //     yield return new WaitForSeconds(0.4f);
+    //}
 
     private void Die() // Maybe the physics need to be stopped while the animation does it's thing.
     {
         isAlive = false;
         myAnimator.SetTrigger("Dying");
-        myRigidbody.velocity = deathKick;
+        //myRigidbody.velocity = deathKick;
         FindObjectOfType<GameSession>().ProcessPlayerDeath();
+        // TRY making the player invincible for 0.04f.
+
+        //myRigidbody.velocity = 0f;
+        // Stop GRAVITY, MOVEMENT, EVERYTHING! set velocity to 0?
+        //Debug.Log(Time.time);
+        //print("Process Player Death");
+        //print(gameObject.transform.position);
     }
 
     private void flipSprite()

@@ -42,7 +42,8 @@ public class GameSession : MonoBehaviour {
     {
         if (playerLives > 0) // maybe >= 0 or => 0
         {
-            TakeLife(); // TRY printing the current lives as a way to see how it decreases when you hit the water.
+            // TakeLife();
+            Invoke ("TakeLife", 1f); // I tried this but the water error still happens and now the player shoots off and dies.
         } else
         {
             ResetGameSession();
@@ -52,10 +53,18 @@ public class GameSession : MonoBehaviour {
     private void TakeLife()
     {
         playerLives--;
+        //WaitForDamage(); Doesn't work. Maybe I need this kind of think to happen as immune to collisions for 0.4f.
+        print(playerLives);
+        Debug.Log(Time.time);
         Scene currentScene = SceneManager.GetActiveScene(); // Can also be done with ().buldindex and no .name bellow.
         SceneManager.LoadScene(currentScene.name); // .name just tells it to load the scene named currentScene rather than by number.
         livesText.text = playerLives.ToString();
     }
+
+   // IEnumerator WaitForDamage()
+   // {
+    //    yield return new WaitForSeconds(0.4f);
+    //}
 
     private void ResetGameSession()
     {
