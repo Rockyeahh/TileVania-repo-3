@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1497037781943744}
   m_IsPrefabParent: 1
+--- !u!1 &1293434717942320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4216013666711964}
+  - component: {fileID: 61402334825293828}
+  m_Layer: 15
+  m_Name: Player Feet Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1497037781943744
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,7 +39,6 @@ GameObject:
   - component: {fileID: 212664477149860846}
   - component: {fileID: 50847125227814666}
   - component: {fileID: 70644465443140934}
-  - component: {fileID: 61322171693950770}
   - component: {fileID: 114302406689500512}
   m_Layer: 10
   m_Name: Player
@@ -39,10 +54,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497037781943744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.48, y: 0.48, z: 0}
+  m_LocalPosition: {x: 32.809998, y: -3.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4216013666711964}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4216013666711964
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293434717942320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4019845569838974}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50847125227814666
@@ -65,12 +94,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &61322171693950770
+--- !u!61 &61402334825293828
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1497037781943744}
+  m_GameObject: {fileID: 1293434717942320}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -98,7 +127,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1497037781943744}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 228e719392aff944a9a4c7008f203cf4, type: 2}
+  m_Material: {fileID: 6200000, guid: f999e3d06c4bf854b9b49c755a3e76f2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
