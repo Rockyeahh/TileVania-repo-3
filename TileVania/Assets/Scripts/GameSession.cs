@@ -42,8 +42,8 @@ public class GameSession : MonoBehaviour {
     {
         if (playerLives > 0) // maybe >= 0 or => 0
         {
-            // TakeLife(); // Old Rick code that I may use again.
-            Invoke ("TakeLife", 1f); // I tried this but the water error still happens and now the player shoots off and dies.
+             TakeLife(); // Old Rick code that I may use again.
+            //Invoke ("TakeLife", 1f); // I tried this but the water error still happens and now the player shoots off and dies.
         } else
         {
             ResetGameSession();

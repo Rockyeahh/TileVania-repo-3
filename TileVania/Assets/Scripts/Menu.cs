@@ -15,6 +15,11 @@ public class Menu : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
+    public void LoadWinScreen()
+    {
+        SceneManager.LoadScene("03a_Win_Screen");
+    }
+
     public void QuitGame()
     {
         print("Quit Game"); // Finish this.

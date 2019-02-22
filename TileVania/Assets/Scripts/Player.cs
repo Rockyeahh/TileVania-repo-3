@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
-    [SerializeField] Vector2 deathKick = new Vector2 (25f, 25f); // This is supposed to throw the player up in the air?
+    //[SerializeField] Vector2 deathKick = new Vector2 (25f, 25f); // This is supposed to throw the player up in the air?
 
     // State
     bool isAlive = true;
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (myBody.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
+        if (myBody.IsTouchingLayers(LayerMask.GetMask("Enemy Hit Detection", "Hazards")))
         {
             Die();
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0);

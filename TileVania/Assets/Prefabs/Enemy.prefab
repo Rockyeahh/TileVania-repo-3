@@ -22,11 +22,26 @@ GameObject:
   - component: {fileID: 95617967207768200}
   - component: {fileID: 212238316472835532}
   - component: {fileID: 50049836828025700}
-  - component: {fileID: 70463214924084054}
-  - component: {fileID: 61646874821668768}
+  - component: {fileID: 61854924734945310}
   - component: {fileID: 114039336687059306}
   m_Layer: 12
   m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1506320643072330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4590316529466630}
+  - component: {fileID: 70895798460490844}
+  m_Layer: 16
+  m_Name: Enemy Hit Detection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,8 +56,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.31, y: -3.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4590316529466630}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4590316529466630
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1506320643072330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4322993252682308}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50049836828025700
@@ -65,7 +94,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61646874821668768
+--- !u!61 &61854924734945310
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -90,12 +119,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09618282, y: 0.5885358}
   m_EdgeRadius: 0
---- !u!70 &70463214924084054
+--- !u!70 &70895798460490844
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1262742083034628}
+  m_GameObject: {fileID: 1506320643072330}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
