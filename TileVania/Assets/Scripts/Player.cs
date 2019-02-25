@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
 
     // State
     bool isAlive = true;
+    bool playerIsJumping = false;
 
     // Cached component references
     Rigidbody2D myRigidbody;
@@ -64,10 +65,11 @@ public class Player : MonoBehaviour {
         
         if (CrossPlatformInputManager.GetButtonDown("Jump"))
         {
-            
+            playerIsJumping = true; // Sets the Jump state to true.
             Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
             myRigidbody.velocity += jumpVelocityToAdd;
         }
+        // Do I set it back to false here?
     }
 
     private void ClimbLadder()
