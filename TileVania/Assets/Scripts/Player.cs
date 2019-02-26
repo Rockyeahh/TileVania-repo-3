@@ -45,6 +45,8 @@ public class Player : MonoBehaviour {
 
     private void Run()
     {
+//        if (playerIsJumping == false)
+ //       {
         float controlThrow = CrossPlatformInputManager.GetAxisRaw("Horizontal"); // Value is between -1 to +1;
         Vector2 playerVelocity = new Vector2(controlThrow * runSpeed, myRigidbody.velocity.y); // Just use the current rigidbody velocity of y.
         myRigidbody.velocity = playerVelocity; // What Why???
@@ -53,10 +55,12 @@ public class Player : MonoBehaviour {
                                                                                           // that are doing the same type of thing.
         if (playerHasHorizontalSpeed)
         {
-            myAnimator.SetBool("Running", true); // Rick doesn't use an if stament here but instead just copies in the playerHasHorizontalSpeed in place of true.
+            myAnimator.SetBool("Running", true); // Rick doesn't use an if statement here but instead just copies in the playerHasHorizontalSpeed in place of true.
                                                  // This is less lines but it will likely be changing to an if statement later anyway so I'll keep it around.
         }
         else { myAnimator.SetBool("Running", false); }
+//        }
+
     }
 
     private void Jump()
@@ -68,7 +72,7 @@ public class Player : MonoBehaviour {
             playerIsJumping = true; // Sets the Jump state to true.
             Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
             myRigidbody.velocity += jumpVelocityToAdd;
-        }
+        } //else { playerIsJumping = false; }
         // Do I set it back to false here?
     }
 
