@@ -40,7 +40,7 @@ public class GameSession : MonoBehaviour {
 
     public void ProcessPlayerDeath() // Keep public so that other scripts/classes can trigger player death.
     {
-        if (playerLives > 0) // maybe >= 0 or => 0
+        if (playerLives > 1) // maybe >= 0 or => 0
         {
              TakeLife(); // Old Rick code that I may use again.
             //Invoke ("TakeLife", 1f); // I tried this but the water error still happens and now the player shoots off and dies.
@@ -53,8 +53,8 @@ public class GameSession : MonoBehaviour {
     private void TakeLife()
     {
         playerLives--;
-        print(playerLives);
-        Debug.Log(Time.time);
+        //print(playerLives);
+        //Debug.Log(Time.time);
         Scene currentScene = SceneManager.GetActiveScene(); // Can also be done with ().buldindex and no .name bellow.
         SceneManager.LoadScene(currentScene.name); // .name just tells it to load the scene named currentScene rather than by number.
         livesText.text = playerLives.ToString();
